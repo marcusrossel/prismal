@@ -12,27 +12,27 @@ import UIKit
 
 /// The coordinator sitting at the root of the entire app.
 final class AppCoordinator: RootCoordinator {
-   
-   /// The window in which the coordinator will manage content.
-   private let window: UIWindow
-   
-   /// The root coordinator managing the app's controllers.
-   private(set) lazy var mainCoordinator: MainCoordinator = MainCoordinator()
-   
-   /// The view controller assigned as the window's root view controller.
-   private(set) lazy var rootViewController: UIViewController = mainCoordinator.rootViewController
-   
-   /// Initializes an app coordinator from the window in which it will display its content.
-   init(window: UIWindow) {
-      self.window = window
-   }
-   
-   /// Hands controller over to the app coordinator, which effectively starts the app.
-   func start() {
-      // Sets up and presents the window.
-      window.rootViewController = rootViewController
-      window.makeKeyAndVisible()
-      
-      mainCoordinator.start()
-   }
+    
+    /// The window in which the coordinator will manage content.
+    private let window: UIWindow
+    
+    /// The root coordinator managing the app's controllers.
+    private(set) lazy var mainCoordinator: MainCoordinator = MainCoordinator()
+    
+    /// The view controller assigned as the window's root view controller.
+    private(set) lazy var rootViewController: UIViewController = mainCoordinator.rootViewController
+    
+    /// Initializes an app coordinator from the window in which it will display its content.
+    init(window: UIWindow) {
+        self.window = window
+    }
+    
+    /// Hands controller over to the app coordinator, which effectively starts the app.
+    func start() {
+        // Sets up and presents the window.
+        window.rootViewController = rootViewController
+        window.makeKeyAndVisible()
+        
+        mainCoordinator.start()
+    }
 }
